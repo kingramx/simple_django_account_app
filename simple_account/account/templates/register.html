@@ -1,23 +1,30 @@
-<h3>Register Page</h3>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Register Page</title>
+    </head>
+    <body>
 
-<form action="{% url 'register' %}" method="POST">
-    {% csrf_token %}
-    <input type="text" placeholder="Username" name="username" >
-    <br>
-    <input type="email" placeholder="Email" name="email" >
-    <br>
-    <input type="password" placeholder="Password" name="password" >
-    <br>
-    <input type="password" placeholder="Confirm Password" name="conf_password" >
-    <br>
-    <button type="submit">Register</button>
-</form>
-<br>
-
-<p>
-    <a href="{% url 'login' %}">Click here If you have registered before!</a>
-</p>
-<br><br>
-{% if check_user %}
-    <string> You are logged in and it means this app worked good for you :)</strong>
-{% endif %}
+        <h3>Register Page</h3>
+        <form action="{% url 'register' %}" method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Username" name="username" >
+            <br>
+            <input type="email" placeholder="Email" name="email" >
+            <br>
+            <input type="password" placeholder="Password" name="password" >
+            <br>
+            <input type="password" placeholder="Confirm Password" name="conf_password" >
+            <br>
+            <button type="submit">Register</button>
+        </form>
+        <br>
+        <p>
+            <a href="{% url 'login' %}">Click here If you have registered before!</a>
+        </p>
+        <br><br>
+        {% if check_user %}
+            <string> You are logged in and it means this app worked good for you :)</strong>
+        {% endif %}
+    </body>
+</html>

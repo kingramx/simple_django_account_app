@@ -18,21 +18,21 @@ def register_view(request):
         if password == conf_password:
             if User.objects.filter(username=username).exists():
                 print("This username is taken before!")
-                return redirect('register_user_url')
+                return redirect('register')
             else:
                 if User.objects.filter(email=email):
                     print("This emal is taken before!")
-                    return redirect('register_user_url')
+                    return redirect('register')
                 else:
                     user = User.objects.create_user(username=username,
                                                     password=password,
                                                     email = email)
                     user.save()
                     print("User registered successfully!")
-                    return redirect('login_user_url')
+                    return redirect('login')
         else:
             print("Passwrods do not match, Try again!")
-            return redirect('register_user_url')
+            return redirect('register')
     else:
         return render(request, 'register.html')
 

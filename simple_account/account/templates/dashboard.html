@@ -1,11 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>User Dashboard Page</title>
+    </head>
+    <body>
 
+        {% if user.is_authenticated %}
+            Hello {{ user.username }}
+            <br>
+            <strong>This App Worked Fine For you!</strong>
 
-{% if user.is_authenticated %}
-    Hello {{ user.username }}
-    <br>
-    <strong>This App Worked Fine For you!</strong>
+            <bR><br>
 
-    <bR><br>
-
-    <a href="{% url 'logout' %}">Click to <span style="color:red">logout</span></a>
-{% endif %}
+            <a href="{% url 'logout' %}">Click to <span style="color:red">logout</span></a>
+        {% endif %}
+    </body>
+</html>
